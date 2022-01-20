@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CS 6241 Spring 2020</title>
+    <!-- Nunito Sans font -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Patrick+Hand+SC" rel="stylesheet">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="./css/icon.css" rel="stylesheet">
+    <link href="./css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">    
+  </head>
+
+  <body>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">CS 6241</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#resources">Resources</a></li>	    
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#coursework">Coursework</a></li>	    
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container theme-showcase" role="main">
+      <div class="row">
+	<h3>CS 6241: Numerical Methods for Data Science</h3>
+	<div class="col-md-9">
+	  Cornell University, Spring 2020.<br />
+	  Lectures: 2:55 PM&ndash;4:10 PM, Tuesdays and Thursdays, <strike>203 Phillips Hall</strike> virtual on zoom.<br /><br />
+
+	  Instructor: <a href="http://www.cs.cornell.edu/~arb/">Austin Benson</a>, Assistant Professor, Computer Science (arb@cs.cornell.edu).<br />
+	  Office hours: 4:15 PM&ndash;5:15 Thursdays (after class) or by appointment, <strike>413B Gates</strike> virtual on zoom.<br /><br />
+
+	  TA: <a href="http://kangbo.me/">Kangbo Li</a>, PhD student, Computer Science (kl935@cornell.edu).<br />
+	  Office hours: 2:30&ndash;3:30pm Mondays, <strike>405 Rhodes</strike> virtual on zoom.<br /><br />
+	</div>
+      </div>
+
+      <div class="row" id="resources">
+	<h4>Resources</h4>	
+	<div class="col-md-9">
+	  Course administration:
+	  <ul>
+	    <li><a href="https://cmsx.cs.cornell.edu">CMS</a> for managing course work.</li>
+	    <li><a href="https://github.com/arbenson/cs6241_2020sp">Jupyter notebooks and data</a> for class demos.</li>	    
+	  </ul>	    
+	  	  
+	  Educational material:
+	  <ul>
+	    <li><a href="http://www.cs.cornell.edu/courses/cs6241/2019sp/">CS 6241 Spring 2019 web page</a>.</li>	    
+	    <li><a href="http://www.cs.cornell.edu/~bindel/class/sjtu-summer19/index.html">David Bindel's 2019 SJTU summer short course on numerical methods for data science</a>.</li>
+	    <li><a href="https://newcatalog.library.cornell.edu/catalog/10504163">Numerical Linear Algebra</a>. L. N. Trefethen and D. Bau III.</li>
+	  </ul>
+
+	  Datasets:
+	  <ul>
+	    <li><a href="https://www.kaggle.com/datasets">Kaggle datasets</a>.</li>
+	    <li><a href="https://archive.ics.uci.edu/ml/datasets.php">UCI Machine Learning Repository</a>.</li>
+	    <li><a href="https://icon.colorado.edu/#!/">The Colorado Index of Complex Networks (ICON)</a>.</li>	    
+	    <li><a href="http://snap.stanford.edu/data/index.html">SNAP data</a>.</li>	    
+	    <li><a href="http://www.cs.cornell.edu/~arb/data/index.html">Some datasets I have collected</a>.</li>
+	    <li><a href="https://toolbox.google.com/datasetsearch">Google Dataset Search</a>.</li>
+	  </ul>
+	</div>
+      </div>
+
+      <div class="row" id="schedule">
+	<div class="col-md-9">
+	  <h4>Coursework schedule</h4>
+	  <ul>
+	    <li><a href="coursework/cs6241_2020sp_hw1_RELEASE.pdf">Homework 1</a>.
+	      Due Th Feb 13 at 11:59pm ET.</li>
+	    <li><a href="coursework/cs6241_2020sp_hw2_RELEASE.pdf">Homework 2</a>.
+	      Due Th Mar 5 at 11:59pm ET.</li>
+	    <li><a href="coursework/cs6241_2020sp_reax_RELEASE.pdf">Reaction paper</a>.
+	      Due Th Apr 9 at 11:59pm ET.</li>
+	    <li><a href="coursework/cs6241_2020sp_proposal_RELEASE.pdf">Project proposal</a>.
+	      Due Th Apr 23 at 11:59pm ET.</li>
+	    <li><a href="coursework/cs6241_2020sp_progress_RELEASE.pdf">Project progress report</a>.
+	      Due Th May 7 at 11:59pm ET.</li>
+	    <li><a href="coursework/cs6241_2020sp_report_RELEASE.pdf">Project final report</a>.
+	      Due Th May 21 at 11:59pm ET.</li> 
+	  </ul>
+	  
+	  <h4>Class schedule</h4>
+	  
+	  This schedule is tentative and subject to change.
+	  
+	  <h5><b>Week 1</b></h5>
+	  
+	  <b>Lecture 1 (Tu 1/21): overview and background</b><br />
+	  Topics: course overview, vector and matrix norms, linear systems, eigenvalues, basic matrix factorizations, basic optimization<br />
+	  Readings:
+	  <ul>
+	    <li><a href="https://www.cs.cornell.edu/~bindel/class/sjtu-summer19/lec/background.pdf">Background notes from David Bindel's 2019 SJTU summer course</a>.</li>
+	    <li><a href="https://newcatalog.library.cornell.edu/catalog/8728957">Numerical Optimization</a> (Chapters 1 and 2).</li>
+	  </ul>
+	  Lecture notes:
+	  <ul>
+	    <li><a href="notes/cs6241_20200121.pdf">Lecture 1</a></li>
+	  </ul>	    
+
+
+	  <b>Lecture 2 (Th 1/23): linear least squares</b><br />
+	  Topics: solving linear least squares with matrix factorizations, statistical interpretations<br />
+	  Readings:
+	  <ul>
+	    <li><a href="https://web.stanford.edu/~hastie/ElemStatLearn/">The Elements of Statistical Learning</a> (sections 2.9, 3.1, and 3.2).</li>
+	    <li><a href="https://newcatalog.library.cornell.edu/catalog/8728957">Numerical Optimization</a> (Chapters 1 and 2).</li>
+	    <li><a href="https://newcatalog.library.cornell.edu/catalog/10504163">Numerical Linear Algebra</a> (Sections I and II).</li>
+	    <li><a href="https://www.cs.cornell.edu/~bindel/class/sjtu-summer19/lec/2019-05-22.pdf">D. Bindel's lecture notes on linear least squares</a>.</li>
+	  </ul>
+	  Lecture notes:
+	  <ul>
+	    <li><a href="notes/cs6241_20200123.pdf">Lecture 2</a></li>
+	    <li><a href="https://github.com/arbenson/cs6241_2020sp/blob/master/linear-least-squares.ipynb">Jupyter notebook on linear least squares</a>
+	  </ul>	    
+
+
+	  <h5><b>Week 2</b></h5>
+
+	  <b>Lecture 3 (Tu 1/28): regularized linear least squares</b><br />
+	  Topics: Tikhonov regularization / ridge regression, Lasso, pivoted QR<br />
+	  Readings:
+	  <ul>
+	    <li><a href="https://epubs.siam.org/doi/book/10.1137/1.9781611971446">Applied Numerical Linear Algebra</a> (section 3.5).</li>
+	    <li><a href="readings/Chan-1987-RRQR.pdf">Rank Revealing QR Factorizations</a>. T. F. Chan. LAA, 1987.</li>
+	    <li><a href="https://web.stanford.edu/~hastie/ElemStatLearn/">The Elements of Statistical Learning</a> (section 3.4).</li>
+	    <li><a href="https://www.cs.cornell.edu/~bindel/class/sjtu-summer19/lec/2019-05-23.pdf">D. Bindel's lecture notes on regularized linear least squares</a>.</li>
+	  </ul>
+	  Lecture notes:
+	  <ul>
+	    <li><a href="notes/cs6241_20200128.pdf">Lecture 3</a></li>
+	    <li><a href="https://github.com/arbenson/cs6241_2020sp/blob/master/reg-least-squares.ipynb">Jupyter notebook on regularized linear least squares</a>
+	  </ul>	    
+	  
+	  <b>Lecture 4 (Th 1/30): iterative optimization</b><br/>
+	  Topics: (stochastic) gradient descent, (quasi-)Newton<br />
+	  Readings:
+	  <ul>
+	    <li><a href="https://newcatalog.library.cornell.edu/catalog/8728957">Numerical Optimization</a> (sections 3.1â3.3)</li>	    
+	    <li><a href="readings/Bottou-2018-opt.pdf">Optimization Methods for Large-Scale Machine Learning</a>. L. Bottou, F. E. Curtis, and J. Nocedal. SIREV, 2018.</li>
+	    <li><a href="https://www.cs.cornell.edu/~bindel/class/sjtu-summer19/lec/2019-05-23.pdf">D. Bindel's lecture notes on regularized linear least squares</a>.</li>
+	    <li><a href="https://www.cs.cornell.edu/~bindel/class/sjtu-summer19/lec/2019-05-24.pdf">D. Bindel's lecture notes on optimization</a>.</li>
+	  </ul>
+	  Lecture notes:
+	  <ul>
+	    <li><a href="notes/cs6241_20200130.pdf">Lecture 4</a></li>
+	  </ul>	
+
+
+	  <h5><b>Week 3</b></h5>
+
+	  <b>Lecture 5 (Tu 2/4): iterative optimization and start of latent factor models</b></br/>
+	  Topics: gradient descent with errors, more SGD, momentum, acceleration, basic ideas for latent factor models<br />
+Readings:
+<ul>
+	    <li><a href="https://www.cs.cornell.edu/~bindel/class/sjtu-summer19/lec/2019-05-23.pdf">D. Bindel's lecture notes on regularized linear least squares</a>.</li>
+	    <li><a href="https://www.cs.cornell.edu/~bindel/class/sjtu-summer19/lec/2019-05-24.pdf">D. Bindel's lecture notes on optimization</a>.</li>
+	    <li><a href="https://www.cs.cornell.edu/~bindel/class/sjtu-summer19/lec/2019-05-28.pdf">D. Bindel's lecture notes on latent factor models</a>.</li>
+	    <li><a href="readings/Bottou-2018-opt.pdf">Optimization Methods for Large-Scale Machine Learning</a>. L. Bottou, F. E. Curtis, and J. Nocedal. SIREV, 2018.</li>  
+	    <li><a href="readings/Su-2016-Nesterov.pdf">A Differential Equation for Modeling Nesterov's Accelerated Gradient Method: Theory and Insights</a>. W. Su, S. Boyd, and E. J. CandÃšs. JMLR, 2016.</li>
+	    <li><a href="https://sites.google.com/site/igorcarron2/matrixfactorizations">The Advanced Matrix Factorization Jungle</a>. I. Carron.</li>
+	  </ul>
+	  Lecture notes:
+	  <ul>
+	    <li><a href="notes/cs6241_20200204.pdf">Lecture 5</a></li>
+	  </ul>	
+
+
+	  <b>Lecture 6 (Th 2/6): latent factor models and linear dimensionality reduction</b></br/>
+	  Topics: PCA, robust PCA, role of truncated SVD and proximal methods<br />
+	  Readings:
+	  <ul>
+	    <li><a href="https://www.stat.cmu.edu/~cshalizi/uADA/12/lectures/ch18.pdf">C. Shalizi's lecture notes on PCA</a>.</li>
+	    <li><a href="https://www.cs.cornell.edu/~bindel/class/sjtu-summer19/lec/2019-05-31.pdf">D. Bindel's lecture notes on collaborative filtering and other stories</a>.</li>
+	    <li><a href="readings/Candes-2011-robust-PCA.pdf">Robust Principal Component Analysis?</a>. E. J. Cand&egrave;s et al. JACM, 2011.</li>
+	    <li><a href="readings/Parikh-2014-proximal.pdf">Proximal Algorithms</a>. N. Parikh and S. Boyd. Foundations and Trends in Optimization, 2014.</li>
+	    <li><a href="https://see.stanford.edu/materials/lsocoee364b/01-subgradients_notes.pdf">S. Boyd and L. Vandenberghe's lecture notes on subgradients</a>.</li>
+	    <li><a href="https://web.stanford.edu/~boyd/papers/pdf/admm_slides.pdf">S. Boyd's lecture notes on ADMM</a>.</li>
+	  </ul>
+	  Lecture notes:
+	  <ul>
+	    <li><a href="notes/cs6241_20200206.pdf">Lecture 6</a></li>
+	    <li><a href="https://github.com/arbenson/cs6241_2020sp/blob/master/PCA.ipynb">Jupyter notebook on PCA</a>
+	  </ul>	
+
+	  
+
+	  <h5><b>Week 4</b> [HW1 due Th 2/13 at 11:59pm ET]</h5>
+
+	  <b>Lecture 7 (Tu 2/11): latent factor models, dimensionality reduction, and matrix factorizations</b><br/>
+	  Topics: SVD-based latent factors and matrix completion<br />
+	  Readings:
+	  <ul>
+	    <li><a href="https://www.cs.cornell.edu/~bindel/class/sjtu-summer19/lec/2019-05-31.pdf">D. Bindel's lecture notes on collaborative filtering and other stories</a>.</li>
+	    <li><a href="https://sifter.org/~simon/journal/20061211.html">Netflix Update: Try This at Home</a>. S. Funk, 2006.</li>
+	    <li><a href="readings/Koren-2008-Factorization.pdf">Factorization Meets the Neighborhood: a Multifaceted Collaborative Filtering Model.</a> Y. Koren. KDD, 2008.</li>
+	    <li><a href="readings/Pennington-2014-glove.pdf">GloVe: Global Vectors for Word Representation</a>. Pennington et al. EMNLP, 2014.</li>
+	    <li><a href="readings/Yang-2018-bottleneck.pdf">Breaking the Softmax Bottleneck: A High-Rank RNN Language Model</a>. Yang et al. ICLR, 2018.</li>
+	    <li><a href="readings/Candes-2009-exact.pdf">Exact Matrix Completion via Convex Optimization</a>. E. J. CandÃšs and B. Recht. FOCM, 2009.</li>
+	  </ul>
+	  Lecture notes:
+	  <ul>
+	    <li><a href="notes/cs6241_20200211.pdf">Lecture 7</a></li>
+	  </ul>	
+	  
+	  <b>Lecture 8 (Th 2/13): latent factor models, dimensionality reduction, and matrix factorizations</b><br/>
+	  Topics: nonnegative matrix factorization (NMF)<br />
+	  Readings:
+	  <ul>	  
+	    <li><a href="https://www.cs.cornell.edu/~bindel/class/sjtu-summer19/lec/2019-05-30.pdf">D. Bindel's lecture notes on non-negative matrix factorization</a>.</li>
+	    <li><a href="https://arxiv.org/abs/1401.5226">The Why and How of Nonnegative Matrix Factorization</a>. N. Gillis. arXiv, 2014.</li>
+	    <li><a href="readings/Lee-Seung-1999-NMF.pdf">Learning the parts of objects by non-negative matrix factorization</a>. D. D. Lee and H. S. Seung. Nature, 1999.</li>
+	    <li><a href="readings/Lee-Seung-2001-NMF.pdf">Algorithms for Non-negative Matrix Factorization</a>. D. D. Lee and H. S. Seung. NeurIPS, 2001.</li>
+	    <li><a href="readings/Donoho-Stodden-2003-separable.pdf">When Does Non-Negative Matrix Factorization Give a Correct Decomposition into Parts?</a> D. Donoho and V. Stodden. NeurIPS, 2003.</li>
+	    <li><a href="readings/Vavasis-2009-NMF-complexity.pdf">On the complexity of nonnegative matrix factorization</a>. S. A. Vavavis. SIOPT, 2009.
+	    <li><a href="readings/Arora-2016-NMF.pdf">Computing a nonnegative matrix factorization&mdash;provably</a>. S. Arora, R. Ge, R. Kannan, and A. Moitra. SICOMP, 2016.</li>
+	  </ul>
+	  Lecture notes:
+	  <ul>
+	    <li><a href="notes/cs6241_20200213.pdf">Lecture 8</a></li>
+	  </ul>
+
+	  <h5><b>Week 5</b> </h5>
+	  
+	  <b>Lecture 9 (Tu 2/18): interpretable latent factor models and start of tensors</b><br/>
+	  Topics: interpolative decomposition, CUR, basics on tensors, problems with border rank<br />
+	  Readings:
+	  <ul>
+	    <li><a href="https://www.cs.cornell.edu/~bindel/class/sjtu-summer19/lec/2019-05-29.pdf">D. Bindel's lecture notes on SVD and other low rank decompositions</a>.</li>
+	    <li><a href="readings/Liberty-2007-ID.pdf">Randomized algorithms for the low-rank approximation of matrices</a>. E. Liberty et al. PNAS, 2007.</li>
+	    <li><a href="readings/Mahoney-Drineas-2009-CUR.pdf">CUR matrix decompositions for improved data analysis</a>. M. W. Mahoney and P. Drineas. PNAS, 2009.</li>
+	    <li><a href="readings/desilva-2008-tensor-rank.pdf">Tensor Rank and the Ill-Posedness of the Best Low-Rank Approximation Problem.</a>
+	      V. de Silva and L.-H. Lim. SIMAX, 2008.</li>
+	  </ul>
+	  Lecture notes:
+	  <ul>
+	    <li><a href="notes/cs6241_20200218.pdf">Lecture 9</a></li>
+	    <li><a href="https://github.com/arbenson/cs6241_2020sp/blob/master/ID-CUR.ipynb">Jupyter notebook on ID and CUR</a>
+	    <li><a href="https://github.com/arbenson/cs6241_2020sp/blob/master/border-rank.ipynb">Jupyter notebook on tensor border rank</a>
+	  </ul>
+
+	  <b>Lecture 10 (Th 2/20): low-rank tensor decompositions</b></br>
+	  Topics: more difficulties with tensors, CP and Tucker decompositions<br />
+	  Readings:
+	  <ul>
+	    <li><a href="readings/hillar-2013-nphard.pdf">Most Tensor Problems Are NP-Hard</a>. C. J. Hillar, L.-H. Lim. JACM, 2013.</li>
+	    <li><a href="readings/kolda-2003-counterexample.pdf">A Counterexample
+	    to the Possibility of an Extension of the Eckart&ndash;Young
+	    Low-Rank Approximation Theorem for the Orthogonal Rank Tensor
+		Decomposition.</a> T. G. Kolda. SIMAX, 2003.</li>
+	    <li><a href="readings/Kolda-Bader-2009-survey.pdf">Tensor Decompositions and Applications</a>. T. G. Kolda and B. W. Bader. SIREV, 2009.</li>
+	    <li><a href="readings/delathauwer-2000-rank-approx.pdf">On the Best Rank-1 and Rank-(R<sub>1</sub>, R<sub>2</sub>,...,R<sub>N</sub>) Approximation of Higher-Order Tensors</a>.
+	      L. De Lathauwer, B. De Moor, and J. Vandewalle. SIMAX, 2000.</li>
+	    <li><a href="readings/Williams-2018-unsupervised.pdf">Unsupervised Discovery of Demixed, Low-dimensional Neural Dynamics across Multiple Timescales through Tensor Components Analysis</a>. A. H. Williams et al. Neuron, 2018.
+	  </ul>
+	  Lecture notes:
+	  <ul>
+	    <li><a href="notes/cs6241_20200220.pdf">Lecture 10</a></li>
+	  </ul>
+
+	  <h5><b>Week 6</b></h5>
+	  
+	  <b>No lecture Tu 2/25 (February break)</b><br /><br />
+
+	  <b>Lecture 11 (Th 2/27): Nonlinear dimensionality reduction</b><br />
+	  Topics: ISOMAP, LLE, t-SNE<br />
+	  Readings:
+	  <ul>
+	    <li><a href="readings/Tenenbaum-2000-Isomap.pdf">A Global Geometric Framework for Nonlinear Dimensionality Reduction</a>. J. B. Tenenbaum, V. de Silva, and J. C. Langford. Science, 2000.</li>
+	    <li><a href="readings/Roweis-2000-LLE.pdf">Nonlinear Dimensionality Reduction by Locally Linear Embedding</a>. S. T. Roweis and L. K. Saul. Science, 2000.</li>
+	    <li><a href="readings/Hinton-2002-SNE.pdf">Stochastic Neighbor Embedding</a>. G. Hinton and S. Roweis. NeurIPS, 2002.</li>
+	    <li><a href="readings/vanderMaaten-2008-tsne.pdf">Visualizing Data using t-SNE</a>. L. van der Maaten and G. Hinton. JMLR, 2008.</li>
+	    <li><a href="readings/vanderMaaten-2014-trees.pdf">Accelerating t-SNE using Tree-Based Algorithms</a>. L. van der Maaten. JMLR, 2014.</li>
+	    <li><a href="https://distill.pub/2016/misread-tsne/">How to Use t-SNE Effectively</a>. M. Wattenberg, F. Vi&eacute;gas, and I. Johnson. Distill, 2016.</li>
+	  </ul>
+	  Lecture notes:
+	  <ul>
+	    <li><a href="notes/cs6241_20200227.pdf">Lecture 11</a></li>
+	    <li><a href="https://github.com/arbenson/cs6241_2020sp/blob/master/nonlinear-dim-redux.ipynb">Jupyter notebook on nonlinear dimensionality reduction</a>
+	  </ul>
+
+	  <h5><b>Week 7 [HW2 due Th 3/5 at 11:59pm ET]</b></h5>
+
+	  <b>Lecture 12 (Th 3/3): Basic network analysis</b><br />
+	  Topics: matrices associated with graphs, common network properties<br />
+	  Readings:
+	  <ul>
+	    <li><a href="readings/Newman-2003-structure.pdf">The Structure and Function of Complex Networks</a>. M. E. J. Newman. SIREV, 2003.</li>
+	    <li><a href="readings/Gleich-2016-mining.pdf">Mining Large Graphs</a>. D. F. Gleich and M. W. Mahoney. Handbook of Big Data, Handbooks of modern statistical methods, 2016.</li>	    
+	    <li><a href="http://www.cs.yale.edu/homes/spielman/561/">D. Spielman's spectral graph theory course</a>.</li>
+	    <li><a href="https://arxiv.org/abs/1111.4503">The Anatomy of the Facebook Social Graph</a>. J. Ugander et al. arXiv, 2011.</li>
+	    <li><a href="readings/Watts-1998-smallworld.pdf">Collective dynamics of âsmall-worldâ networks</a>. D. J. Watts and S. H. Strogatz. Nature, 1998.</li>	    
+	    <li><a href="readings/Travers-1969-smallworld.pdf">An Experimental Study of the Small World Problem</a>. J. Travers and S. Milgram. Sociometry, 1969.</li>	    
+	  </ul>
+	  Lecture notes:
+	  <ul>
+	    <li><a href="notes/cs6241_20200303.pdf">Lecture 12</a></li>
+	  </ul>
+
+	  <b>Lecture 13 (Th 3/5): Basic network analysis</b><br />
+	  Topics: common network properties, random graph models<br />
+	  Readings:
+	  <ul>
+	    <li><a href="readings/Newman-2003-structure.pdf">The Structure and Function of Complex Networks</a>. M. E. J. Newman. SIREV, 2003.</li>
+	    <li><a href="https://arxiv.org/abs/1111.4503">The Anatomy of the Facebook Social Graph</a>. J. Ugander et al. arXiv, 2011.</li>
+	    <li><a href="readings/Chung-Lu-2001-diameter.pdf">The Diameter of Sparse Random Graphs</a> F. Chung and L. Lu. Advances in Applied Mathematics, 2001.</li>
+	    <li><a href="readings/Leskovec-2005-temporal.pdf">Graphs over Time: Densification Laws, Shrinking Diameters and Possible Explanations</a> J. Leskovec, J. Kleinberg, and C. Faloutsos. KDD, 2005.</li>
+	    <li><a href="readings/Fosdick-2018-configuration.pdf">Configuring Random Graph Models with Fixed Degree Sequences</a>.	      
+	      B. K. Fosdick et al. SIREV, 2018.
+	    <li><a href="readings/Karrer-2011-community.pdf">Stochastic blockmodels and community structure in networks</a>. B. Karrer and M. E. J. Newman. PRE, 2011.</li>
+	    <li><a href="readings/Abbe-2017-SBMs.pdf">Community Detection and Stochastic Block Models: Recent Developments</a>. E. Abbe. JMLR, 2017.</li>	    
+	    <li><a href="readings/Mitzenmacher-2004-history.pdf">A Brief History of Generative Models for Power Law and Lognormal Distributions</a>. M. Mitzenmacher. Internet Mathematics, 2004.</li>
+	    <li><a href="readings/Clauset-2009-power-laws.pdf">Power-Law Distributions in Empirical Data</a>. A. Clauset, C. R. Shalizi, and M. E. J. Newman. SIREV, 2009.</li>
+	  </ul>
+	  Lecture notes:
+	  <ul>
+	    <li><a href="notes/cs6241_20200305.pdf">Lecture 13</a></li>
+	    <li><a href="https://github.com/arbenson/cs6241_2020sp/blob/master/random-graph-models.ipynb">Jupyter notebook on random graph models</a>
+	  </ul>
+
+	  <h5><b>Week 8</b></h5>
+	  
+	  <b>Lecture 14 (Th 3/10): Unsupervised learning on graphs</b><br />
+	  Topics: spectral methods for bipartitioning, ratio cut, normalized cut<br />
+	  Readings:
+	  <ul>
+	    <li><a href="readings/vonLuxburg-2007-spectral.pdf">A tutorial on spectral clustering</a>. U. von Luxburg. Statistics and Computing, 2007.</li>
+	    <li><a href="readings/Porter-2009-AMS.pdf">Communities in Networks</a>. M. A. Porter, J.-P. Onnela, and P. J. Mucha. Notices of the AMS, 2009.</li>	    
+	    <li><a href="readings/Fortunato-2016-guide.pdf">Community detection in networks: A user guide</a>. S. Fortunato and D. Hric. Physics Reports, 2016.</li>
+	  </ul>
+	  Lecture notes:
+	  <ul>
+	    <li><a href="notes/cs6241_20200310.pdf">Lecture 14</a></li>
+	    <li><a href="https://github.com/arbenson/cs6241_2020sp/blob/master/spectral-clustering-I.ipynb">Jupyter notebook on spectral clustering (part I)</a>
+	  </ul>
+
+	  <b>Lecture 15 (Th 3/12): Unsupervised learning on graphs</b><br />
+	  Topics: conductance, Cheeger's inequality, k-way spectral clustering<br />
+	  Readings:
+	  <ul>
+	    <li><a href="readings/vonLuxburg-2007-spectral.pdf">A tutorial on spectral clustering</a>. U. von Luxburg. Statistics and Computing, 2007.</li>
+	    <li><a href="http://www.cs.yale.edu/homes/spielman/561/lect06-15.pdf">D. A. Spielman's lecture notes on Conductance, the Normalized Laplacian, and Cheegerâs Inequality</a>.</li>
+	    <li><a href="readings/Kokiopoulou-2011-trace.pdf">Trace optimization and eigenproblems in dimension reduction methods</a>. E. Kokiopoulou, J. Chen, and Y. Saad. Numer. Linear Algebra Appl., 2011.</li>
+	  </ul>
+	  Lecture notes:
+	  <ul>
+	    <li><a href="notes/cs6241_20200312.pdf">Lecture 15</a></li>
+	    <li><a href="https://github.com/arbenson/cs6241_2020sp/blob/master/spectral-clustering-II.ipynb">Jupyter notebook on spectral clustering (part II)</a>
+	  </ul>
+
+	  <h5><b>Week 9</b></h5>
+
+	  <b>No lecture Tu 3/17 or Th 3/19 (Cornell classes suspended due to covid-19)</b><br /><br />
+
+	  <h5><b>Week 10</b></h5>
+
+	  <b>No lecture Tu 3/24 or Th 3/26 (Cornell classes suspended due to covid-19)</b><br /><br />
+
+	  <h5><b>Week 11</b></h5>
+
+	  <b>No lecture Tu 3/31 or Th 4/2 (spring break)</b><br /><br />
+
+	  <h5><b>Week 12 [Reaction paper due Th 4/9 at 11:59pm ET]</b></h5>
+	  
+	  <b>Lecture 16 (Tu 4/7): Graph-based semi-supervised learning [VIRTUAL SYNCHRONOUS LECTURE]</b></br >
+	  Topics: classical graph-based semi-supervised techniques with connections to random walks and spectral clustering<br />
+	  Readings:
+	  <ul>
+	    <li><a href="readings/ZGL-2003-SSL.pdf">Semi-Supervised Learning Using Gaussian Fields and Harmonic Functions</a>. X. Zhu, Z. Ghahraman, and J. Lafferty. ICML, 2003.</li>
+	    <li><a href="readings/Zhou-2004-global-local.pdf">Learning with Local and Global Consistency</a>. D. Zhou et al. NeurIPS, 2004.</li>
+	    <li><a href="readings/Xu-2010-kriging.pdf">Empirical stationary correlations for semi-supervised learning on graphs</a>. Y. Xu, J. S. Dyer, and A. B. Owen. Ann. Appl. Stat., 2010.</li>
+	    <li><a href="readings/Gleich-2015-robustifying.pdf">Using Local Spectral Methods to Robustify Graph-Based Learning Algorithms</a>. D. F. Gleich and M. W. Mahoney. KDD, 2015.</li>
+	  </ul>
+	  Lecture notes:
+	  <ul>
+	    <li><a href="notes/cs6241_20200407.pdf">Lecture 16</a></li>
+	  </ul>	
+	  
+	  <b>Lecture 17 (Th 4/9): Node representation learning in graphs [VIRTUAL SYNCHRONOUS LECTURE]</b></br>
+	  Topics: latent space models, role discovery, node embeddings<br />
+	  Readings:
+	  <ul>
+	    <li><a href="readings/Hoff-2002-latent.pdf">Latent Space Approaches to Social Network Analysis</a>. P. D. Hoff, A. E. Raftery, and M. S. Handcock. JASA, 2002.</li>
+	    <li><a href="readings/Henderson-2012-RolX.pdf">RolX: Structural Role Extraction & Mining in Large Graphs</a>. K. Henderson et al. KDD, 2012.</li>
+	    <li><a href="readings/Perozzi-2014-DeepWalk.pdf">DeepWalk: Online Learning of Social Representations</a>. B. Perozzi, R. Al-Rfou, and S. Skiena. KDD, 2014.</li>
+	    <li><a href="readings/Grover-2016-node2vec.pdf">node2vec: Scalable Feature Learning for Networks</a>. A. Grover and J. Leskovec. KDD, 2016.</li>
+	    <li><a href="readings/Hamilton-2017-representation.pdf">Representation Learning on Graphs: Methods and Applications</a>. W. L. Hamilton, R. Ying, and J. Leskovec. Bull. of the IEEE Comp. Soc. TCDE, 2017.</li>
+	    <li><a href="readings/Qiu-2018-factorization.pdf">Network Embedding as Matrix Factorization: Unifying DeepWalk, LINE, PTE, and node2vec</a>. J. Qiu et al. WSDM, 2018.</li>
+	  </ul>
+	  Lecture notes:
+	  <ul>
+	    <li><a href="notes/cs6241_20200409.pdf">Lecture 17</a></li>
+	  </ul>
+
+	  <h5><b>Week 13</b></h5>
+
+	  <b>Lecture 18 (Th 4/14): Graph neural networks [VIRTUAL SYNCHRONOUS LECTURE]</b></br>
+	  Topics: high-level ideas, basic derivation of graph convolutional networks<br />
+	  Readings:
+	  <ul>
+	    <li><a href="https://www.stat.cmu.edu/~cshalizi/uADA/15/lectures/12.pdf">C. Shalizi's lecture notes on Logistic Regression</a>.</li>
+	    <li><a href="readings/Zhou-2004-global-local.pdf">Learning with Local and Global Consistency</a>. D. Zhou et al. NeurIPS, 2004.</li>	    
+	    <li><a href="readings/Hamilton-2017-representation.pdf">Representation Learning on Graphs: Methods and Applications</a>. W. L. Hamilton, R. Ying, and J. Leskovec. Bull. of the IEEE Comp. Soc. TCDE, 2017.</li>
+	    <li><a href="readings/Kipf-2017-GCN.pdf">Semi-Supervised Classification with Graph Convolutional Networks</a>. T. N. Kipf and M. Welling. ICLR, 2017.</li>
+	  </ul>
+	  Lecture notes:
+	  <ul>
+	    <li><a href="notes/cs6241_20200414.pdf">Lecture 18</a></li>
+	  </ul>
+
+	  <b>Lecture 19 (Th 4/16): Graph neural networks [VIRTUAL SYNCHRONOUS LECTURE]</b></br>
+	  Topics: more general architectures, other prediction tasks<br />
+	  Readings:
+	  <ul>
+	    <li><a href="https://arxiv.org/abs/2002.08274">Outcome Correlation in Graph Neural Network Regression</a>. J. Jia and A. R. Benson. arXiv, 2020.</li>
+	    <li><a href="readings/Hamilton-2017-GraphSAGE.pdf">Inductive Representation Learning on Large Graphs</a>. W. L. Hamilton, R. Ying, and J. Leskovec. NeurIPS, 2017.</li>
+	    <li><a href="https://arxiv.org/abs/1312.6203">Spectral networks and locally connected networks on graphs</a>. J. Bruna et al. ICLR, 2014.</li>
+	  </ul>
+	  Lecture notes:
+	  <ul>
+	    <li><a href="notes/cs6241_20200416.pdf">Lecture 19</a></li>
+	  </ul>
+
+	  <h5><b>Week 14 [Project proposal due Th 4/23 at 11:59pm ET]</b></h5>
+	  <b>"Lecture" 20 (Tu 4/21): small subgraph patterns [READ ON YOUR OWN]</b></br>
+	  Topics: network motifs and network structure<br />
+	  Readings:
+	  <ul>
+	    <li><a href="readings/Milo-2002-motifs.pdf">Network Motifs: Simple Building Blocks of Complex Networks</a>. R. Milo et al. Science, 2002.</li>
+	    <li><a href="readings/Benson-2016-HOO.pdf">Higher-order organization of complex networks</a>. A. R. Benson, D. F. Gleich, and J. Leskovec. Science, 2016.</li>
+	    <li><a href="readings/Ugander-2013-subgraphs.pdf">Subgraph Frequencies: Mapping the Empirical and Extremal Geography of Large Graph Collections</a>.
+	      J. Ugander, L. Backstrom, and J. Kleinberg. WWW, 2013. [See also the <a href="http://stanford.edu/~jugander/subgraphs/">companion page</a>.] </li>
+	  </ul>
+
+	  <b>"Lecture" 21 (Th 4/23): small subgraph patterns [VIRTUAL SYNCHRONOUS DISCUSSION]</b></br>
+	  Topics: discussion on network motifs and network structure, subgraph counting algorithms<br />
+	  Readings:
+	  <ul>
+	    <li><a href="readings/Chiba-1985-arboricity.pdf">Arboricity and Subgraph Listing Algorithms</a>. N. Chiba and T. Nishizeki. SICOMP, 1985.</li>
+	    <li><a href="readings/Latapy-2008-triangles.pdf">Main-memory triangle computations for very large (sparse (power-law)) graphs</a>. M. Latapy. Theoretical Computer Science, 2008.</li>
+	    <li><a href="readings/Sesh-2013-wedges.pdf">Triadic Measures on Graphs: The Power of Wedge Sampling</a>. C. Seshadhri, A. Pinar, and T. G. Kolda. SDM, 2013.</li>
+	    <li><a href="readings/Pinar-2017-ESCAPE.pdf">ESCAPE: Efficiently Counting All 5-Vertex Subgraphs</a>. A. Pinar, C. Seshadhri, and V. Vishal. WWW, 2017.</li>
+	    <li><a href="readings/Jain-2020-pivoting.pdf">The Power of Pivoting for Exact Clique Counting</a>. S. Jain and C. Seshadhri. WSDM, 2020.</li>
+	    <li><a href="readings/Kumar-2020-weighted.pdf">Retrieving Top Weighted Triangles in Graphs</a>. R. Kumar et al. WSDM, 2020.</li>
+	  </ul>
+	  Lecture notes:
+	  <ul>
+	    <li><a href="notes/cs6241_20200423.pdf">Lecture 21</a></li>
+	  </ul>
+
+	  <h5><b>Week 15</b></h5>
+	  <b>Lecture 22 (Tu 4/28): kernels [VIRTUAL SYNCHRONOUS LECTURE]</b><br />
+	  Topics: feature maps, kernel trick, function approximation, RKHSs<br />
+	  Readings:
+	  <ul>
+	    <li><a href="https://www.cs.cornell.edu/~bindel/class/sjtu-summer19/lec/2019-06-04.pdf">D. Bindel's lecture notes on Many interpretations of kernels</a>.</li>	    
+	    <li><a href="https://web.stanford.edu/~hastie/ElemStatLearn/">The Elements of Statistical Learning</a> (section 14.5.4).</li>
+	    <li><a href="https://scikit-learn.org/stable/auto_examples/decomposition/plot_kernel_pca.html">scikit-learn kernel PCA example</a>.</li>
+	    <li><a href="readings/Hofmann-2008-survey.pdf">Kernel Methods in Machine Learning</a>. T. Hofmann, B. SchÃ¶lkopf, and A. J. Smola. Ann. Stat., 2008.</li>
+	  </ul>
+	  Lecture notes:
+	  <ul>
+	    <li><a href="notes/cs6241_20200428.pdf">Lecture 22</a></li>
+	  </ul>
+
+	  <b>Lecture 23 (Th 4/30): kernels [VIRTUAL SYNCHRONOUS LECTURE]</b><br />
+	  Topics: RKHSs, native spaces, MooreâAronszajn, Gaussian Processes, GP likelihood and hyperparameter optimization<br />
+	  Readings:
+	  <ul>
+	    <li><a href="https://www.cs.cornell.edu/~bindel/class/sjtu-summer19/lec/2019-06-04.pdf">D. Bindel's lecture notes on Many interpretations of kernels</a>.</li>
+	    <li><a href="https://www.cs.cornell.edu/~bindel/class/sjtu-summer19/lec/2019-06-05.pdf">D. Bindel's lecture notes on Approaches to kernel selection</a>.</li>
+	    <li><a href="https://www.cs.cornell.edu/~bindel/class/sjtu-summer19/lec/2019-06-06.pdf">D. Bindel's lecture notes on Computing with GPs</a>.</li>
+	    <li><a href="http://www.gaussianprocess.org/gpml/chapters/">Gaussian Processes for Machine Learning</a>.
+	      C. E. Rasmussen and C. K. I. Williams. MIT Press, 2006.</li>
+	  </ul>
+	  Lecture notes:
+	  <ul>
+	    <li><a href="notes/cs6241_20200430.pdf">Lecture 23</a></li>
+	  </ul>
+
+
+	  <h5><b>Week 16 [Progres report due Th 5/7 at 11:59pm ET]</b></h5>
+	  <b>"Lecture" 24 (Tu 5/5): Gaussian Processes [READ ON YOUR OWN]</b></br>
+	  Topics: fast computation for hyperparameter optimization<br />
+	  Readings:
+	  <ul>
+	    <li><a href="readings/Dong-2017-scalable.pdf">Scalable Log Determinants for Gaussian Process Kernel Learning</a>. K. Dong et al. NeurIPS, 2017.</li>
+	  </ul>
+
+	  <b>"Lecture" 25 (Th 5/7): Gaussian Processes [VIRTUAL SYNCHRONOUS DISCUSSION]</b></br>
+	  Topics: fast computation for hyperparameter optimization<br />
+	  Readings:
+	  <ul>
+	    <li><a href="https://scikit-learn.org/stable/modules/gaussian_process.html#kernels-for-gaussian-processes">scikit-learn Kernels for Gaussian Processes</a>.</li>
+	    <li><a href="readings/Wilson-2015-SKI.pdf">Kernel Interpolation for Scalable Structured Gaussian Processes (KISS-GP)</a>. A. G. Wilson and H. Nickisch. ICML, 2015.</li>	    
+	    <li><a href="readings/Eriksson-2018-scaling.pdf">Scaling Gaussian Process Regression with Derivatives</a>. D. Eriksson et al. NeurIPS, 2018.</li>
+	    <li><a href="readings/Wang-2019-exact.pdf">Exact Gaussian Processes on a Million Data Points</a>. K. A. Wang et al. NeurIPS, 2019.</li>	    
+	    <li><a href="readings/Ubaru-2017-fast.pdf">Fast estimation of tr(f(A)) via stochastic Lanczos quadrature</a>. S. Ubaru, J. Chen, and Y. Saad. SIMAX, 2017.</li>	      
+	    <li><a href="https://www.cs.cornell.edu/~bindel/class/sjtu-summer19/lec/2019-06-06.pdf">D. Bindel's lecture notes on Computing with GPs</a>.</li>	    
+	  </ul>
+	  Lecture notes
+	  <ul>
+	    <li><a href="notes/cs6241_20200507.pdf">Lecture 25</a></li>
+	  </ul>	  
+
+	  <h5><b>Week 17</b></h5>
+	  <b>Project feedback sessions (Mon 5/11 and Tu 5/12)</b><br />
+
+	  <h5><b>Week 18</b> [Final project report due Th 5/21 at 11:59pm ET]</h5>
+	</div>
+      </div>	
+
+      <div class="row" id="coursework">
+	<h4>Coursework</h4>
+	<div class="col-md-9">
+	  Coursework will be managed through and assignments submitted on <a href="https://cmsx.cs.cornell.edu">CMS</a>.
+	  The required coursework consists of three components:
+	  <ul>
+	    <li><b>Homework</b> (20%)<br/>
+	      There are two homeworks that will have a theoretical
+	      component and/or an implementation with data analysis component.
+	    </li>
+
+	    <li><b>Reaction paper</b> (20%)<br/>
+	      The second component of the course is composing a (roughly)
+	      5-page reaction paper that summarizes and critiques at least two
+	      closely related published papers relevant to the class. The
+	      motivation of this assignment is to get everyone thinking about
+	      research issues related to the class material and to stimulate
+	      ideas for the course project (described below). You can work
+	      individually or in groups of two or three. Your group members can
+	      be the same as your project partners, but they do not have to be.
+	      There may be a group presentation involved. Additional details will be posted soon.
+	    </li>
+
+	    <li><b>Course project</b> (60%)<br/>
+	      Most of your grade will be determined by a course project, where
+	      the topic is of your choosing but must be related to the
+	      class. You can work individually or in groups of two or three (the
+	      scope of the project should be scaled according to the group
+	      size). We will be looking for three key pieces in the course
+	      project: (i) some theoretical or mathematical discussion of a
+	      numerical method or algorithm (broadly construed); (ii) some
+	      software implementation of a method or algorithm; and (iii) some
+	      analysis of a real-world dataset. The project will be split into
+	      three components: a proposal, a progress report, and a final report,
+	      worth 10%, 15%, and 35% of the final grade, respectively.	      
+	      More details will be posted soon.
+	    </li>
+	  </ul>
+	</div>
+      </div>
+    </div>
+
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/docs.min.js"></script>
+      <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+      <script src="js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
