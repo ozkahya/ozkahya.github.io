@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Bilgisayar Mühendisliği - Staj Memnuniyet Anketi</title>
+  <style>
+    :root{--bg:#f7fafc;--card:#ffffff;--accent:#1f6feb;--muted:#6b7280}
+    body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial; background:var(--bg);margin:0;padding:24px;color:#111}
+    .container{max-width:900px;margin:0 auto}
+    .card{background:var(--card);border-radius:12px;padding:20px;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+    h1{margin:0 0 6px;font-size:20px}
+    p.lead{margin:0 0 18px;color:var(--muted)}
+    fieldset{border:0;padding:0;margin:12px 0}
+    .section{margin-top:18px}
+    label.question{display:block;font-weight:600;margin-bottom:6px}
+    .row{display:flex;gap:12px;flex-wrap:wrap}
+    .col{flex:1;min-width:180px}
+    .radio-group, .checkbox-group{display:flex;flex-direction:column;gap:6px}
+    select,input[type="text"],textarea{width:100%;padding:8px;border-radius:8px;border:1px solid #e6e9ef}
+    textarea{min-height:100px}
+    .grid-table{width:100%;border-collapse:collapse;margin-top:6px}
+    .grid-table th,.grid-table td{border:1px solid #eef2f7;padding:8px;text-align:center}
+    .controls{display:flex;gap:8px;justify-content:flex-end;margin-top:18px}
+    button{background:var(--accent);color:#fff;border:0;padding:10px 14px;border-radius:8px;cursor:pointer}
+    button.secondary{background:#f3f4f6;color:#111}
+    .note{font-size:13px;color:var(--muted);margin-top:8px}
+    .thankyou{display:none;padding:12px;border-radius:8px;background:#ecfffa;color:#065f46;margin-top:12px}
+    @media (max-width:640px){.row{flex-direction:column}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>Bilgisayar Mühendisliği - Staj Memnuniyet ve Deneyim Anketi</h1>
+      <p class="lead">Bu anket, staj deneyimlerinizi ve memnuniyetinizi değerlendirmek amacıyla hazırlanmıştır. Anket anonimdir; yanıtlar yalnızca değerlendirme amaçlı kullanılacaktır.</p>
+
+      <form id="survey">
+
+        <section class="section">
+          <fieldset>
+            <legend class="question">1) Cinsiyetiniz</legend>
+            <div class="radio-group">
+              <label><input type="radio" name="cinsiyet" value="Kadin"> Kadın</label>
+              <label><input type="radio" name="cinsiyet" value="Erkek"> Erkek</label>
+              <label><input type="radio" name="cinsiyet" value="Belirtmek istemiyorum"> Belirtmek istemiyorum</label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend class="question">2) Staj yaptığınız kurum türü</legend>
+            <div class="radio-group">
+              <label><input type="radio" name="kurum_turu" value="Ozel sektor"> Özel sektör</label>
+              <label><input type="radio" name="kurum_turu" value="Kamu kurumu"> Kamu kurumu</label>
+              <label><input type="radio" name="kurum_turu" value="Universite/Araştirma merkezi"> Üniversite / Araştırma merkezi</label>
+              <label>Diğer: <input type="text" name="kurum_turu_diger" placeholder="(varsa belirtiniz)"></label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend class="question">3) Kurumun faaliyet alanı</legend>
+            <div class="radio-group">
+              <label><input type="radio" name="faaliyet" value="Yazilim gelistirme"> Yazılım geliştirme</label>
+              <label><input type="radio" name="faaliyet" value="Donanim/Gomulu"> Donanım / Gömülü sistemler</label>
+              <label><input type="radio" name="faaliyet" value="Ag/Siber guvenlik"> Ağ / Siber güvenlik</label>
+              <label><input type="radio" name="faaliyet" value="Veri bilimi/Yapay zeka"> Veri bilimi / Yapay zekâ</label>
+              <label>Diğer: <input type="text" name="faaliyet_diger" placeholder="(varsa belirtiniz)"></label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend class="question">4) Staj süresi</legend>
+            <div class="radio-group">
+              <label><input type="radio" name="suresi" value="10 gunden az"> 10 günden az</label>
+              <label><input type="radio" name="suresi" value="10-20 gun"> 10–20 gün</label>
+              <label><input type="radio" name="suresi" value="21-30 gun"> 21–30 gün</label>
+              <label><input type="radio" name="suresi" value="30 gunden fazla"> 30 günden fazla</label>
+            </div>
+          </fieldset>
+        </section>
+
+        <section class="section">
+          <h3>Staj Ortamı ve Danışmanlık</h3>
+          <fieldset>
+            <legend class="question">5) Size bir staj danışmanı atandı mı?</legend>
+            <div class="radio-group">
+              <label><input type="radio" name="danisman" value="Evet"> Evet</label>
+              <label><input type="radio" name="danisman" value="Hayir"> Hayır</label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend class="question">6) Staj süresince rehberlik düzeyi</legend>
+            <div class="radio-group">
+              <label><input type="radio" name="rehberlik" value="Kesinlikle saglandi"> Kesinlikle sağlandı</label>
+              <label><input type="radio" name="rehberlik" value="Kismen saglandi"> Kısmen sağlandı</label>
+              <label><input type="radio" name="rehberlik" value="Yetersizdi"> Yetersizdi</label>
+              <label><input type="radio" name="rehberlik" value="Hic saglanmadi"> Hiç sağlanmadı</label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend class="question">7) Staj ortamı öğrenme açısından destekleyici miydi?</legend>
+            <div class="radio-group">
+              <label><input type="radio" name="destek" value="Kesinlikle katiliyorum"> Kesinlikle katılıyorum</label>
+              <label><input type="radio" name="destek" value="Katiliyorum"> Katılıyorum</label>
+              <label><input type="radio" name="destek" value="Kararsizim"> Kararsızım</label>
+              <label><input type="radio" name="destek" value="Katilmiyorum"> Katılmıyorum</label>
+              <label><input type="radio" name="destek" value="Kesinlikle katilmiyorum"> Kesinlikle katılmıyorum</label>
+            </div>
+          </fieldset>
+        </section>
+
+        <section class="section">
+          <h3>Teknik ve Mesleki Kazanımlar</h3>
+
+          <fieldset>
+            <legend class="question">8) Staj öğrendikleriniz derslerle ilişkili miydi?</legend>
+            <div class="radio-group">
+              <label><input type="radio" name="iliski" value="Evet, buyuk olcude"> Evet, büyük ölçüde</label>
+              <label><input type="radio" name="iliski" value="Kismen"> Kısmen</label>
+              <label><input type="radio" name="iliski" value="Hayir"> Hayır</label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend class="question">9) Aşağıdaki becerileri ne ölçüde geliştirdiniz? (1: hiç – 5: çok)</legend>
+            <table class="grid-table">
+              <thead>
+                <tr>
+                  <th>Beceri</th>
+                  <th>1</th>
+                  <th>2</th>
+                  <th>3</th>
+                  <th>4</th>
+                  <th>5</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="text-align:left;padding-left:8px">Yazılım geliştirme</td>
+                  <td><input type="radio" name="yazilim" value="1"></td>
+                  <td><input type="radio" name="yazilim" value="2"></td>
+                  <td><input type="radio" name="yazilim" value="3"></td>
+                  <td><input type="radio" name="yazilim" value="4"></td>
+                  <td><input type="radio" name="yazilim" value="5"></td>
+                </tr>
+                <tr>
+                  <td style="text-align:left;padding-left:8px">Ekip çalışması</td>
+                  <td><input type="radio" name="ekip" value="1"></td>
+                  <td><input type="radio" name="ekip" value="2"></td>
+                  <td><input type="radio" name="ekip" value="3"></td>
+                  <td><input type="radio" name="ekip" value="4"></td>
+                  <td><input type="radio" name="ekip" value="5"></td>
+                </tr>
+                <tr>
+                  <td style="text-align:left;padding-left:8px">Zaman yönetimi</td>
+                  <td><input type="radio" name="zaman" value="1"></td>
+                  <td><input type="radio" name="zaman" value="2"></td>
+                  <td><input type="radio" name="zaman" value="3"></td>
+                  <td><input type="radio" name="zaman" value="4"></td>
+                  <td><input type="radio" name="zaman" value="5"></td>
+                </tr>
+                <tr>
+                  <td style="text-align:left;padding-left:8px">Problem çözme</td>
+                  <td><input type="radio" name="problem" value="1"></td>
+                  <td><input type="radio" name="problem" value="2"></td>
+                  <td><input type="radio" name="problem" value="3"></td>
+                  <td><input type="radio" name="problem" value="4"></td>
+                  <td><input type="radio" name="problem" value="5"></td>
+                </tr>
+                <tr>
+                  <td style="text-align:left;padding-left:8px">İletişim</td>
+                  <td><input type="radio" name="iletisim" value="1"></td>
+                  <td><input type="radio" name="iletisim" value="2"></td>
+                  <td><input type="radio" name="iletisim" value="3"></td>
+                  <td><input type="radio" name="iletisim" value="4"></td>
+                  <td><input type="radio" name="iletisim" value="5"></td>
+                </tr>
+              </tbody>
+            </table>
+          </fieldset>
+        </section>
+
+        <section class="section">
+          <h3>Çok Disiplinli (Multidisipliner) Deneyim</h3>
+
+          <fieldset>
+            <legend class="question">10) Farklı mühendislik disiplinleriyle çalıştınız mı?</legend>
+            <div class="radio-group">
+              <label><input type="radio" name="multidisiplin" value="Evet, siklikla"> Evet, sıklıkla</label>
+              <label><input type="radio" name="multidisiplin" value="Bazen"> Bazen</label>
+              <label><input type="radio" name="multidisiplin" value="Hayir"> Hayır</label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend class="question">11) Bu deneyim size yeni bakış açıları kazandırdı mı?</legend>
+            <div class="radio-group">
+              <label><input type="radio" name="bakis" value="Evet, onemli olcude"> Evet, önemli ölçüde</label>
+              <label><input type="radio" name="bakis" value="Kismen"> Kısmen</label>
+              <label><input type="radio" name="bakis" value="Hayir"> Hayır</label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend class="question">12) Çok disiplinli çalışma mesleki becerilerinizi geliştirdi mi?</legend>
+            <div class="radio-group">
+              <label><input type="radio" name="beceri" value="Kesinlikle evet"> Kesinlikle evet</label>
+              <label><input type="radio" name="beceri" value="Kismen"> Kısmen</label>
+              <label><input type="radio" name="beceri" value="Hayir"> Hayır</label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend class="question">13) Görevleriniz birden fazla alan bilgisi gerektirdi mi?</legend>
+            <div class="radio-group">
+              <label><input type="radio" name="gorevler" value="Evet"> Evet</label>
+              <label><input type="radio" name="gorevler" value="Kismen"> Kısmen</label>
+              <label><input type="radio" name="gorevler" value="Hayir"> Hayır</label>
+            </div>
+          </fieldset>
+        </section>
+
+        <section class="section">
+          <h3>Genel Memnuniyet</h3>
+
+          <fieldset>
+            <legend class="question">14) Genel olarak stajınızdan ne kadar memnunsunuz?</legend>
+            <div class="radio-group">
+              <label><input type="radio" name="memnuniyet" value="Cok memnun"> Çok memnun</label>
+              <label><input type="radio" name="memnuniyet" value="Memnun"> Memnun</label>
+              <label><input type="radio" name="memnuniyet" value="Kararsiz"> Kararsız</label>
+              <label><input type="radio" name="memnuniyet" value="Memnun degil"> Memnun değil</label>
+              <label><input type="radio" name="memnuniyet" value="Hic memnun degil"> Hiç memnun değil</label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend class="question">15) Staj kurumunu başka öğrencilere önerir misiniz?</legend>
+            <div class="radio-group">
+              <label><input type="radio" name="onerir" value="Evet"> Evet</label>
+              <label><input type="radio" name="onerir" value="Emin degilim"> Emin değilim</label>
+              <label><input type="radio" name="onerir" value="Hayir"> Hayır</label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend class="question">16) Staj uygulamasının geliştirilmesi için önerileriniz</legend>
+            <textarea name="oneriler" placeholder="Görüş ve önerilerinizi buraya yazınız..."></textarea>
+          </fieldset>
+
+        </section>
+
+        <div class="controls">
+          <button type="button" id="downloadCsv">Yanıtı CSV olarak indir</button>
+          <button type="submit">Gönder (ve CSV indir)</button>
+        </div>
+
+        <div class="thankyou" id="thankyou">Teşekkürler! Yanıtınız kaydedildi (tarayıcınıza indirildi).</div>
+      </form>
+
+      <p class="note">Not: Bu form basitçe tarayıcıda veri toplayıp yerel olarak CSV indirir. Eğer merkezi bir veri toplama (ör. sunucu veya Google Sheets) isterseniz, yardımcı olabilirim.</p>
+    </div>
+  </div>
+
+<script>
+  function formDataToObject(fd){
+    const obj = {};
+    for(const [k,v] of fd.entries()){
+      // for multiple same-name fields (not used here) you could handle arrays
+      obj[k]=v;
+    }
+    return obj;
+  }
+
+  function toCSV(row){
+    const escape = s => '"'+String(s).replace(/"/g,'""')+'"';
+    const keys = Object.keys(row);
+    const vals = keys.map(k=>escape(row[k] ?? ''));
+    return keys.join(',')+"\n"+vals.join(',');
+  }
+
+  function download(filename, content){
+    const blob = new Blob([content], {type: 'text/csv;charset=utf-8;'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = filename; document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url),1000);
+  }
+
+  document.getElementById('survey').addEventListener('submit', function(e){
+    e.preventDefault();
+    const fd = new FormData(e.target);
+    const data = formDataToObject(fd);
+    // ensure ordering of columns (nice-to-have)
+    const order = [
+      'cinsiyet','kurum_turu','kurum_turu_diger','faaliyet','faaliyet_diger','suresi',
+      'danisman','rehberlik','destek','iliski','yazilim','ekip','zaman','problem','iletisim',
+      'multidisiplin','bakis','beceri','gorevler','memnuniyet','onerir','oneriler'
+    ];
+    const ordered = {};
+    order.forEach(k=>ordered[k]=data[k]??'');
+
+    const csv = toCSV(ordered);
+    const filename = 'staj_anketi_'+(new Date()).toISOString().slice(0,19).replace(/[:T]/g,'-')+'.csv';
+    download(filename,csv);
+    document.getElementById('thankyou').style.display='block';
+    // optionally reset: e.target.reset();
+  });
+
+  document.getElementById('downloadCsv').addEventListener('click', function(){
+    const fd = new FormData(document.getElementById('survey'));
+    const data = formDataToObject(fd);
+    const filename = 'staj_anketi_preview_'+(new Date()).toISOString().slice(0,19).replace(/[:T]/g,'-')+'.csv';
+    const order = [
+      'cinsiyet','kurum_turu','kurum_turu_diger','faaliyet','faaliyet_diger','suresi',
+      'danisman','rehberlik','destek','iliski','yazilim','ekip','zaman','problem','iletisim',
+      'multidisiplin','bakis','beceri','gorevler','memnuniyet','onerir','oneriler'
+    ];
+    const ordered = {};
+    order.forEach(k=>ordered[k]=data[k]??'');
+    const csv = toCSV(ordered);
+    download(filename,csv);
+    alert('CSV hazırlandı ve indirildi.');
+  });
+</script>
+</body>
+</html>
